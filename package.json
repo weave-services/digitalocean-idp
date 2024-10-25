@@ -1,0 +1,29 @@
+{
+  "name": "digitalocean-displacement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "displace": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "taubyte",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@types/colors": "^1.2.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@opentf/cli-pbar": "^0.7.2",
+    "@taubyte/spore-drive": "^0.1.2",
+    "@types/xml2js": "^0.4.14",
+    "colors": "^1.4.0",
+    "dots-wrapper": "^3.11.12",
+    "ts-node": "^10.9.2",
+    "xml2js": "^0.6.2"
+  }
+}
