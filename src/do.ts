@@ -1,6 +1,8 @@
 import { createApiClient } from "dots-wrapper";
 
 const myApiToken = process.env.DIGITALOCEAN_API_TOKEN || "";
+const myProjectName = process.env.DIGITALOCEAN_PROJECT_NAME || "spore drive test";
+
 const dots = createApiClient({ token: myApiToken });
 
 const findProjectByName = async (projectName: string) => {
@@ -47,7 +49,7 @@ const getDropletByUrn = async (dropletUrn: string) => {
 export const Droplets = async () => {
   const droplets = await listDropletsByProjectId(
     (
-      await findProjectByName("spore drive test")
+      await findProjectByName(myProjectName)
     ).id
   );
 

@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@opentf/cli-pbar": "^0.7.2",
-    "@taubyte/spore-drive": "^0.1.2",
+    "@taubyte/spore-drive": "^0.1.4",
     "@types/xml2js": "^0.4.14",
     "colors": "^1.4.0",
     "dots-wrapper": "^3.11.12",

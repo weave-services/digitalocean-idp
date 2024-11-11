@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "lib": ["ES2020","dom"]
+    "lib": ["ES2020"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

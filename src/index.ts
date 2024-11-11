@@ -128,7 +128,20 @@ function extractIpFromCidr(cidr: string): string {
   return cidr.split("/")[0];
 }
 
-export const fixDNS = async (config: Config) => {
+export const fixDNS = async (config: Config): Promise<boolean> => {
+  const apiUser = process.env.NAMECHEAP_USERNAME;
+  const apiKey = process.env.NAMECHEAP_API_KEY;
+  const clientIp = process.env.NAMECHEAP_IP;
+  const domain = "pom.ac";
+
+  if (!apiUser && !apiKey && !clientIp) {
+    return false; // skip
+  } else if (!apiUser || !apiKey || !clientIp) {
+    throw new Error(
+      "Environment variables NAMECHEAP_USERNAME, NAMECHEAP_API_KEY, and NAMECHEAP_IP must be set"
+    );
+  }
+
   const seerAddrs = [];
   for (const hostname of await config.Hosts().List()) {
     if ((await config.Hosts().Host(hostname).Shapes().List()).includes("all")) {
@@ -140,17 +153,6 @@ export const fixDNS = async (config: Config) => {
         seerAddrs.push(extractIpFromCidr(addr));
       }
     }
-  }
-
-  const apiUser = process.env.NAMECHEAP_USERNAME;
-  const apiKey = process.env.NAMECHEAP_API_KEY;
-  const clientIp = process.env.NAMECHEAP_IP;
-  const domain = "pom.ac";
-
-  if (!apiUser || !apiKey || !clientIp) {
-    throw new Error(
-      "Environment variables NAMECHEAP_USERNAME, NAMECHEAP_API_KEY, and NAMECHEAP_IP must be set"
-    );
   }
 
   const client = new NamecheapDnsClient(
@@ -170,6 +172,8 @@ export const fixDNS = async (config: Config) => {
   client.setAll("*.g", "CNAME", ["substrate.tau.pom.ac."]);
 
   await client.commit();
+
+  return true;
 };
 
 const config: Config = new Config(`${__dirname}/../config`);
@@ -195,8 +199,8 @@ try {
 
 console.log("Update DNS Records...");
 try {
-  await fixDNS(config);
-  console.log("[Done] DNS Records");
+  if (await fixDNS(config)) console.log("[Done] DNS Records");
+  else console.log("[Skip] DNS Records");
 } catch {
   process.exit(2);
 }
