@@ -2,9 +2,9 @@
 
 Creating a custom cloud platform brings powerful advantages—cost savings, full control, data sovereignty, and, crucially, the ability to make your solution self-hostable. By using DigitalOcean's affordable infrastructure, you can save thousands per month compared to AWS Lambda, Vercel, Cloudflare, or similar providers.
 
-[![Watch the Video](https://img.youtube.com/vi/T4b5Vf9V1zQ/0.jpg)](https://www.youtube.com/watch?v=T4b5Vf9V1zQ)
+[![Watch the Video](https://github.com/user-attachments/assets/3fbfd103-bb35-47a2-8f0a-807f09e00adb)](https://www.youtube.com/watch?v=T4b5Vf9V1zQ)
 
-This repository leverages Spore-drive to deploy [Tau](https://github.com/taubyte/tau), an open-source PaaS/IDP, all through code. Read the full guide in [this article](https://medium.com/@fodil.samy/spore-drive-building-a-cloud-platform-in-a-few-lines-of-code-bd3730a95cde).
+This repository leverages [Spore-drive](https://www.npmjs.com/package/@taubyte/spore-drive) to deploy [Tau](https://github.com/taubyte/tau), an open-source PaaS/IDP, all through code. Read the full guide in [this article](https://medium.com/@fodil.samy/spore-drive-building-a-cloud-platform-in-a-few-lines-of-code-bd3730a95cde).
 
 ## Getting Started
 
