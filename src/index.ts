@@ -12,6 +12,8 @@ import NamecheapDnsClient from "./namecheap";
 import { fileURLToPath } from "url";
 import path from "path";
 
+import { existsSync, mkdirSync } from "fs";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -176,7 +178,14 @@ export const fixDNS = async (config: Config): Promise<boolean> => {
   return true;
 };
 
-const config: Config = new Config(`${__dirname}/../config`);
+const configPath = `${__dirname}/../config`;
+
+// Ensure config directory exists
+if (!existsSync(configPath)) {
+  mkdirSync(configPath, { recursive: true });
+}
+
+const config: Config = new Config(configPath);
 
 await config.init();
 
