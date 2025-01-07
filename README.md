@@ -19,6 +19,7 @@ This repository leverages [Spore-drive](https://www.npmjs.com/package/@taubyte/s
    ```bash
    export DIGITALOCEAN_API_TOKEN="<your DigitalOcean token>"
    export DIGITALOCEAN_PROJECT_NAME="<your project name>"
+   export DROPLET_ROOT_PASSWORD="<your droplet root pass>"
    ```
    > **Note**: This setup will deploy across all droplets within your specified project.
    
