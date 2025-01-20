@@ -1,4 +1,7 @@
 import { createApiClient } from "dots-wrapper";
+import dotenv from 'dotenv';
+// Load environment variables
+dotenv.config();
 
 const myApiToken = process.env.DIGITALOCEAN_API_TOKEN || "";
 const myProjectName = process.env.DIGITALOCEAN_PROJECT_NAME || "spore drive test";

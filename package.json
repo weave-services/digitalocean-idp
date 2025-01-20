@@ -18,12 +18,13 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@opentf/cli-pbar": "^0.7.2",
-    "@taubyte/spore-drive": "^0.1.7",
-    "@types/xml2js": "^0.4.14",
-    "colors": "^1.4.0",
-    "dots-wrapper": "^3.11.12",
-    "ts-node": "^10.9.2",
-    "xml2js": "^0.6.2"
+    "@opentf/cli-pbar": "0.7.2",
+    "@taubyte/spore-drive": "0.1.7",
+    "@types/xml2js": "0.4.14",
+    "colors": "1.4.0",
+    "dots-wrapper": "3.11.12",
+    "dotenv": "16.4.7",
+    "ts-node": "10.9.2",
+    "xml2js": "0.6.2"
   }
 }

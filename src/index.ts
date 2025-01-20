@@ -14,6 +14,10 @@ import path from "path";
 
 import { existsSync, mkdirSync } from "fs";
 
+import dotenv from 'dotenv';
+// Load environment variables
+dotenv.config();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

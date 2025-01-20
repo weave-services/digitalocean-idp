@@ -1,3 +1,8 @@
+.DS_Store
+node_modules
+do_not_commit
+*.env
+*.env.local
 config/
 dist/
 node_modules/
