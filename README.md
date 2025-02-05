@@ -1,4 +1,4 @@
-# Build Your Own PaaS/IDP on DigitalOcean
+# Build Your Own PaaS/IDP on DigitalOcean updated for Weave
 
 Creating a custom cloud platform brings powerful advantages—cost savings, full control, data sovereignty, and, crucially, the ability to make your solution self-hostable. By using DigitalOcean's affordable infrastructure, you can save thousands per month compared to AWS Lambda, Vercel, Cloudflare, or similar providers.
 
@@ -15,19 +15,19 @@ This repository leverages [Spore-drive](https://www.npmjs.com/package/@taubyte/s
    ```
 
 2. **Set Environment Variables**  
-   Configure your DigitalOcean API token and project name:
+   Configure your DigitalOcean API token and project name by copying .env.example to .env:
    ```bash
-   export DIGITALOCEAN_API_TOKEN="<your DigitalOcean token>"
-   export DIGITALOCEAN_PROJECT_NAME="<your project name>"
-   export DROPLET_ROOT_PASSWORD="<your droplet root pass>"
+   DIGITALOCEAN_API_TOKEN="<your DigitalOcean token>"
+   DIGITALOCEAN_PROJECT_NAME="<your project name>"
+   DROPLET_ROOT_PASSWORD="<your droplet root pass>"
    ```
    > **Note**: This setup will deploy across all droplets within your specified project.
    
    If you use Namecheap for domain management, enable automatic DNS updates by providing these variables:
    ```bash
-   export NAMECHEAP_API_KEY="<your Namecheap API key>"
-   export NAMECHEAP_IP="<your IP address>"
-   export NAMECHEAP_USERNAME="<your Namecheap username>"
+   NAMECHEAP_API_KEY="<your Namecheap API key>"
+   NAMECHEAP_IP="<your IP address>"
+   NAMECHEAP_USERNAME="<your Namecheap username>"
    ```
 
 3. **Deploy**  
